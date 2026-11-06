@@ -1,0 +1,209 @@
+/* =========================================================
+   Tema SMKN 1 Bantul  (v2)
+   Dimuat setelah Bootstrap, jadi menimpa warna bawaannya.
+   Warna dasar ada di :root, ubah di sini kalau ingin ganti.
+   ========================================================= */
+:root {
+    --tinta:  #14233f;   /* teks utama */
+    --navy:   #12315f;   /* header, judul */
+    --biru:   #1d56a5;   /* tombol, tautan */
+    --biru-2: #174888;   /* hover */
+    --kabut:  #e6eef8;   /* latar header kartu & tabel */
+    --kertas: #f3f6fa;   /* latar halaman */
+    --garis:  #cfdbeb;   /* garis tepi */
+    --redup:  #5d6c85;   /* teks pendukung */
+
+    --bs-primary: #1d56a5;
+    --bs-primary-rgb: 29, 86, 165;
+    --bs-link-color: #1d56a5;
+    --bs-link-color-rgb: 29, 86, 165;
+    --bs-link-hover-color: #12315f;
+    --bs-link-hover-color-rgb: 18, 49, 95;
+    --bs-body-color: #14233f;
+    --bs-body-font-family: 'Source Sans 3', 'Segoe UI', Tahoma, sans-serif;
+    --bs-body-font-size: .975rem;
+    --bs-border-color: #cfdbeb;
+}
+
+body,
+body.bg-light {
+    background: var(--kertas) !important;
+    color: var(--tinta);
+}
+
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+    font-family: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+    font-weight: 600;
+    color: var(--navy);
+    letter-spacing: -.005em;
+}
+h2, .h2 { font-size: 1.65rem; }
+
+:focus-visible { outline: 3px solid rgba(29, 86, 165, .45); outline-offset: 2px; }
+
+/* ---------- Header sekolah (halaman dalam) ---------- */
+.school-header { background: var(--navy); color: #fff; }
+.school-header .inner {
+    max-width: 1320px; margin: 0 auto; padding: 10px 24px;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.school-header .brand { display: flex; align-items: center; gap: 12px; color: #fff; text-decoration: none; }
+.school-header .brand img {
+    width: 42px; height: 42px; object-fit: contain; flex: none;
+    background: #fff; border-radius: 50%; padding: 3px;
+}
+.school-header .brand .nama {
+    font-family: 'Source Serif 4', Georgia, serif; font-weight: 600;
+    font-size: 1.12rem; line-height: 1.15;
+}
+.school-header .brand .sub { font-size: .8rem; color: #b9cbe6; }
+.school-header .akun {
+    text-align: right; line-height: 1.25;
+    padding-left: 16px; border-left: 1px solid rgba(255, 255, 255, .25);
+}
+.school-header .akun .nm    { font-weight: 600; font-size: .92rem; }
+.school-header .akun .peran { font-size: .8rem; color: #b9cbe6; }
+@media (max-width: 576px) {
+    .school-header .brand .sub { display: none; }
+    .school-header .akun .nm   { font-size: .85rem; max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+}
+
+/* Navbar Waka jadi pita menu di bawah header */
+.navbar.bg-dark, .navbar.bg-primary { background: var(--biru) !important; }
+
+/* ---------- Kartu ---------- */
+.card {
+    --bs-card-border-color: var(--garis);
+    --bs-card-border-radius: 8px;
+    --bs-card-inner-border-radius: 7px;
+    --bs-card-cap-bg: var(--kabut);
+    border: 1px solid var(--garis);
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(18, 49, 95, .06) !important;
+}
+.card-header { font-weight: 600; color: var(--navy); border-bottom: 1px solid var(--garis); }
+.card-header.bg-primary, .card-header.bg-dark, .card-header.bg-secondary,
+.card-header.bg-white,   .card-header.bg-light {
+    background-color: var(--kabut) !important;
+    color: var(--navy) !important;
+}
+
+/* ---------- Tombol & form ---------- */
+.btn { border-radius: 6px; font-weight: 600; }
+.btn-primary {
+    --bs-btn-bg: var(--biru);        --bs-btn-border-color: var(--biru);
+    --bs-btn-hover-bg: var(--biru-2); --bs-btn-hover-border-color: var(--biru-2);
+    --bs-btn-active-bg: var(--navy);  --bs-btn-active-border-color: var(--navy);
+    --bs-btn-disabled-bg: #6f93c6;    --bs-btn-disabled-border-color: #6f93c6;
+}
+.btn-outline-primary {
+    --bs-btn-color: var(--biru);       --bs-btn-border-color: var(--biru);
+    --bs-btn-hover-bg: var(--biru);    --bs-btn-hover-border-color: var(--biru);
+    --bs-btn-active-bg: var(--navy);   --bs-btn-active-border-color: var(--navy);
+}
+.bg-primary   { background-color: var(--biru) !important; }
+.text-primary { color: var(--biru) !important; }
+
+.form-control, .form-select { border-color: var(--garis); border-radius: 6px; }
+.form-control:focus, .form-select:focus {
+    border-color: var(--biru);
+    box-shadow: 0 0 0 .2rem rgba(29, 86, 165, .18);
+}
+.form-label { font-weight: 600; font-size: .9rem; color: var(--navy); margin-bottom: .3rem; }
+
+/* ---------- Tabel ---------- */
+.table { --bs-table-border-color: var(--garis); }
+.table > :not(caption) > * > * { vertical-align: middle; }
+.table thead, .table thead.table-light, .table thead.table-dark, .table-light, .table-dark {
+    --bs-table-bg: var(--kabut);
+    --bs-table-color: var(--navy);
+    --bs-table-border-color: var(--garis);
+}
+.table thead th { font-weight: 600; }
+.table-hover > tbody > tr:hover > * { --bs-table-hover-bg: #f0f5fc; }
+
+/* ---------- Lain-lain ---------- */
+.badge, .badge.rounded-pill { border-radius: 4px !important; font-weight: 600; }
+.alert { border-radius: 6px; }
+.nav-tabs .nav-link.active, .nav-pills .nav-link.active { background: var(--biru); color: #fff; }
+.page-link { color: var(--biru); }
+.active > .page-link, .page-link.active { background: var(--biru); border-color: var(--biru); }
+.modal-content { border: 0; border-radius: 8px; }
+.modal-header { background: var(--navy); color: #fff; border-radius: 8px 8px 0 0; }
+.modal-header .modal-title { color: #fff; font-family: 'Source Serif 4', Georgia, serif; }
+.modal-header .btn-close { filter: invert(1); }
+
+/* =========================================================
+   Halaman masuk & daftar: foto sekolah memenuhi layar
+   ========================================================= */
+body.halaman-masuk { background: var(--navy) !important; min-height: 100vh; }
+.masuk-latar { position: fixed; inset: 0; z-index: 0; background: var(--navy); }
+.masuk-latar img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+.masuk-latar::after { content: ""; position: absolute; inset: 0; background: rgba(8, 28, 64, .74); }
+
+.masuk-wrap {
+    position: relative; z-index: 1; min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 36px 18px; color: #fff;
+}
+.masuk-panel {
+    width: 100%; max-width: 410px; padding: 34px 32px 28px;
+    background: rgba(8, 28, 64, .52);
+    border: 1px solid rgba(255, 255, 255, .18); border-radius: 14px;
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+}
+.masuk-merek { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; }
+.masuk-merek img { width: 78px; height: 78px; flex: none; object-fit: contain; background: #fff; border-radius: 50%; padding: 6px; }
+.masuk-merek .nama { font-weight: 700; font-size: 1.7rem; line-height: 1.05; letter-spacing: .02em; text-transform: uppercase; }
+.masuk-merek .kota { font-size: .8rem; font-weight: 600; letter-spacing: .5em; text-transform: uppercase; color: #b9cbe6; margin-top: 6px; }
+
+.masuk-panel .isian {
+    display: block; width: 100%; height: 54px; padding: 0 16px; margin: 0;
+    background: rgba(255, 255, 255, .06); color: #fff;
+    border: 1px solid rgba(255, 255, 255, .7); border-radius: 8px; font-size: 1rem;
+}
+.masuk-panel .isian::placeholder { color: #c4d3ea; }
+.masuk-panel .isian:focus { outline: none; border-color: #fff; background: rgba(255, 255, 255, .12); box-shadow: 0 0 0 3px rgba(120, 180, 255, .4); }
+.masuk-panel .isian:-webkit-autofill {
+    -webkit-text-fill-color: #fff; caret-color: #fff;
+    box-shadow: 0 0 0 1000px #153a74 inset; border-color: #fff;
+}
+.masuk-panel .kolom { margin-bottom: 16px; }
+.masuk-panel .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.isian-grup {
+    display: flex; align-items: stretch; height: 54px;
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .7); border-radius: 8px;
+}
+.isian-grup:focus-within { border-color: #fff; background: rgba(255, 255, 255, .12); box-shadow: 0 0 0 3px rgba(120, 180, 255, .4); }
+.isian-grup .isian { flex: 1; min-width: 0; height: auto; border: 0; background: transparent; box-shadow: none; border-radius: 8px 0 0 8px; }
+.isian-grup .isian:focus { background: transparent; box-shadow: none; }
+.tombol-lihat {
+    flex: none; padding: 0 16px; background: none; border: 0; border-left: 1px solid rgba(255, 255, 255, .35);
+    color: #dbe7f8; font-size: .88rem; font-weight: 600; border-radius: 0 8px 8px 0;
+}
+.tombol-lihat:hover { color: #fff; background: rgba(255, 255, 255, .1); }
+
+.masuk-panel hr { border: 0; border-top: 1px solid rgba(255, 255, 255, .55); opacity: 1; margin: 22px 0; }
+.btn-masuk {
+    display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; height: 50px;
+    background: #2a6fc9; color: #fff; border: 0; border-radius: 8px; font-weight: 700; font-size: 1.02rem;
+}
+.btn-masuk:hover { background: #1f5cae; color: #fff; }
+.btn-masuk svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+
+.masuk-tautan { margin: 18px 0 0; text-align: center; color: #dbe7f8; }
+.masuk-tautan a { color: #fff; font-weight: 700; }
+.masuk-foot { margin-top: 20px; text-align: center; font-size: .84rem; color: #b9cbe6; line-height: 1.6; }
+.masuk-panel .alert { border-radius: 8px; font-size: .92rem; }
+
+@media (max-width: 480px) {
+    .masuk-panel { padding: 26px 20px 22px; }
+    .masuk-merek img { width: 62px; height: 62px; }
+    .masuk-merek .nama { font-size: 1.4rem; }
+    .masuk-merek .kota { letter-spacing: .38em; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .masuk-panel .isian, .btn-masuk { transition: background-color .15s, border-color .15s, box-shadow .15s; }
+}
